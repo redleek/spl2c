@@ -1,0 +1,29 @@
+Prog3:
+
+DECLARATIONS
+
+a OF TYPE INTEGER;
+
+CODE
+
+  FOR a IS 1 BY 1 TO 13 DO
+    IF NOT a = 7 THEN
+      WRITE(a);
+      NEWLINE
+    ENDIF
+  ENDFOR;
+  0 -> a;
+  DO
+    a + 1 -> a;
+    IF NOT a=6 AND a <> 8 THEN
+      WRITE(a);
+      NEWLINE
+    ENDIF
+  WHILE a < 14 ENDDO;
+  0 -> a;
+  WHILE a < 12 DO
+    WRITE(a);
+    a + 1 -> a
+  ENDWHILE;
+  NEWLINE
+ENDP Prog3.

@@ -1,0 +1,11 @@
+HelloWorld:
+DECLARATIONS
+ H,e,l,o,W,r,d,a,q,break OF TYPE CHARACTER;
+CODE
+  'H' -> H; 'e' -> e; 'l' -> l; 'o' -> o; 'W' -> W; 'r' -> r; 'd' -> d; 'a' -> a; 'q' -> q;
+  (q-a)+(q-a) -> break;
+  
+  WRITE(H,e,l,l,o, break, W,o,r,l,d);
+  NEWLINE
+
+ENDP HelloWorld.

@@ -1,0 +1,19 @@
+Prog4D:
+
+DECLARATIONS
+
+r1, r2, r3 OF TYPE REAL;
+
+CODE
+
+  -2.4 -> r1;
+  -34.989 -> r2;
+  r1 * r2 / 7.4 -> r3;
+  WRITE(r3);
+  NEWLINE;
+  READ(r1);
+  r1 + r3 -> r3;
+  WRITE( r3);
+  NEWLINE  
+
+ENDP Prog4D.

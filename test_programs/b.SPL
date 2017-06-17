@@ -1,0 +1,28 @@
+ProgB:
+
+DECLARATIONS
+
+a, b OF TYPE INTEGER;
+c OF TYPE CHARACTER;
+d, e OF TYPE REAL;
+
+
+CODE
+
+  READ(a);
+  READ( b );
+  IF a > b THEN
+    WRITE ('A')
+  ELSE
+    WRITE ( 'B')
+  ENDIF;
+  NEWLINE;
+  READ (d) ;
+  d * 2.3 -> e;
+  WRITE(e);
+  NEWLINE;
+  READ(c);
+  WRITE(c);
+  NEWLINE
+
+ENDP ProgB.

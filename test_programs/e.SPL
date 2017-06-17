@@ -1,0 +1,29 @@
+ProgV
+:
+
+DECLARATIONS
+
+integer,i OF TYPE INTEGER;
+
+CODE
+
+  READ (integer);
+  IF integer <= 5  OR integer >=12 THEN
+    WRITE (integer)
+  ENDIF;
+  WRITE ( (36-1) ); NEWLINE;
+
+  FOR integer IS -1 BY -1 TO -5 DO
+    WRITE(integer); NEWLINE
+    ENDFOR;
+
+   -1 -> i;
+   FOR integer IS i*i*i 
+              BY i*i*i*i*i 
+              TO i*i*(i+i+i+i+i) DO  
+      WRITE(integer); NEWLINE
+      ENDFOR
+
+ENDP
+ProgV
+.
