@@ -69,7 +69,7 @@ void SplToC(TERNARY_TREE t, int indentLevel)
   switch (t->nodeIdentifier)
     {
     case PROGRAM:
-      printf("#include<stdio.h>\n");
+      printf("#include <stdio.h>\n");
       printf("int main()\n{\n");
       SplToC(t->first, indentLevel);
       printf("}\n");
