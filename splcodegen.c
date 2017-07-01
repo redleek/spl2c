@@ -197,7 +197,7 @@ void SplToC(TERNARY_TREE t, int indentLevel)
       switch (symTab[t->item]->type)
 	    {
 	    case TYPE_CHARACTER:
-	      printf("%%c");
+	      printf(" %%c");
 	      break;
 	    case TYPE_INTEGER:
 	      printf("%%d");
