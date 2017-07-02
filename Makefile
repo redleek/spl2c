@@ -14,13 +14,13 @@ spl: lex.yy.c spl.tab.c spl.c splcodegen.c
 	gcc -o spl spl.c spl.tab.c -lfl $(CFLAGS)
 
 parsetree: lex.yy.c spl.tab.c spl.c splcodegen.c
-	gcc -o spl spl.c spl.tab.c -lfl -DDEBUG $(CFLAGS)
+	gcc -o parsetree spl.c spl.tab.c -lfl -DDEBUG $(CFLAGS)
 
 bisondebug: lex.yy.c spl.tab.c spl.c splcodegen.c
 	gcc -o spl spl.c spl.tab.c -lfl -DYYDEBUG $(CFLAGS)
 
 clean:
-	rm -f *tab* *yy* *output spl spl.exe test_programs/*.c a.out
+	rm -f *tab* *yy* *output spl spl.exe parsetree test_programs/*.c a.out
 
 compiletests: clean spl
 	for filename in test_programs/*; \

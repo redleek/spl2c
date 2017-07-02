@@ -138,16 +138,43 @@ void SplToC(TERNARY_TREE t, int indentLevel)
       printf("if (");
       SplToC(t->first, indentLevel);
       printf(")\n");
-      printIndent(indentLevel); printf("{\n");
-      SplToC(t->second, indentLevel+1);
-      printIndent(indentLevel); printf("}");
+      printIndent(indentLevel);
+      // If THEN has only one statement (It's sencond's second branch
+      // should be null, i.e no continuing chain of statements on tree),
+      // do not bother adding curly braces.
+      TERNARY_TREE statementChainLink = t->second->second;
+      if (statementChainLink != NULL)
+	printf("{\n");
+      SplToC(t->second, indentLevel +
+	     // Fix indents for single statment ifs
+	     (statementChainLink == NULL ? 0 : 1)
+	     );
+      printIndent(indentLevel);
+      if (statementChainLink != NULL)
+	printf("}");
+
+      // ELSE statement
       if (t->third != NULL)
 	{
-	  printf("\n");
-	  printIndent(indentLevel); printf("else\n");
-	  printIndent(indentLevel); printf("{\n");
-	  SplToC(t->third, indentLevel+1);
-	  printIndent(indentLevel); printf("}");
+	  // Adjust statementChainLink variable for ELSE statement
+	  //                ELSE --\/
+	  statementChainLink = t->third->second;
+	  if (statementChainLink != NULL)
+	    {
+	      printf("\n"); printIndent(indentLevel);
+	    }
+	  printf("else\n");
+	  printIndent(indentLevel);
+	  if (statementChainLink != NULL)
+	    printf("{\n");
+	  SplToC(t->third, indentLevel +
+		 // Fix indents for single statement elses
+		 (statementChainLink == NULL ? 0 : 1)
+		 );
+	  if (statementChainLink != NULL)
+	    {
+	      printIndent(indentLevel); printf("}");
+	    }
 	}
       break;
 

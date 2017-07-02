@@ -1,0 +1,34 @@
+SingleIf:
+
+DECLARATIONS
+
+  i, j OF TYPE INTEGER;
+
+CODE
+
+  READ(i);
+  READ(j);
+  IF i > j THEN
+    WRITE(i)
+  ELSE
+    WRITE(j)
+  ENDIF;
+  NEWLINE;
+
+  READ(i);
+  READ(j);
+  NEWLINE;
+  IF i > j THEN
+    WRITE(i);
+    NEWLINE;
+    WRITE('n','i','c','e');
+    NEWLINE
+  ELSE
+    WRITE(j,'f');
+    NEWLINE;
+    WRITE('b','a','d');
+    NEWLINE
+  ENDIF;
+  NEWLINE
+  
+ENDP SingleIf.
