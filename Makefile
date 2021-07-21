@@ -1,7 +1,5 @@
 .SUFFIXES:
 
-CFLAGS = -pipe
-
 all: spl
 
 spl.tab.c: spl.y
